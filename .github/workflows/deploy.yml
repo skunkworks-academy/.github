@@ -57,6 +57,14 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Cache Node Modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Clean NPM Cache
         run: npm cache clean --force
 
@@ -72,25 +80,25 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Add Node Modules to PATH
-        run: echo "$(npm bin)" >> $GITHUB_ENV  # Corrected to only append the npm bin directory to PATH
+        run: echo "$(npm bin)" >> $GITHUB_ENV
 
       - name: Run Linting
         run: npm run lint
-        continue-on-error: true  # Allow workflow to proceed even if linting fails
+        continue-on-error: true
         env:
-          CI: true  # Ensure that linting runs in CI mode
+          CI: ${{ env.CI }}
 
       - name: Run Style Linting
         run: npm run lint:styles
-        continue-on-error: true  # Allow workflow to proceed even if style linting fails
+        continue-on-error: true
         env:
-          CI: true  # Ensure that style linting runs in CI mode
+          CI: ${{ env.CI }}
 
       - name: Run Tests
         run: npm test
-        continue-on-error: true  # Allow workflow to proceed even if tests fail
+        continue-on-error: true
         env:
-          CI: true  # Ensure that tests run in CI mode
+          CI: ${{ env.CI }}
 
       - name: Upload Linting and Test Results
         if: failure()
@@ -113,7 +121,7 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies
-        run: npm install --legacy-peer-deps  # Use legacy-peer-deps to resolve conflicts
+        run: npm install --legacy-peer-deps
 
       - name: Build Static Site
         run: npm run build
@@ -122,7 +130,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'  # Assuming parcel outputs to the 'dist' folder
+          path: 'dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
@@ -138,22 +146,18 @@ jobs:
 
       - name: Remove Unwanted Files and Directories
         run: |
-          # List directories and files before cleanup
           echo "Directories and files before cleanup:"
           ls -la
 
-          # Remove unwanted directories and files
           rm -rf node_modules/
           rm -rf .cache/
           rm -rf dist/
 
-          # List directories and files after cleanup
           echo "Directories and files after cleanup:"
           ls -la
 
       - name: Verify Required Directories and Files
         run: |
-          # Verify that only the required directories and files are present
           REQUIRED_ITEMS=(".github/" "src/" "index.html" "package.json" "package-lock.json" "yarn.lock")
           for item in "${REQUIRED_ITEMS[@]}"; do
             if [ ! -e "$item" ]; then
