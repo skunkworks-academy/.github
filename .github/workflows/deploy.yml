@@ -32,6 +32,8 @@ jobs:
           mkdir -p dist
           mkdir -p site
           echo "Directory structure created."
+          echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Skunkworks Academy</title></head><body><h1>Welcome to Skunkworks Academy</h1></body></html>" > site/index.html
+          echo "Sample index.html created in the site directory."
 
   install_dependencies:
     name: Install Dependencies
@@ -120,9 +122,9 @@ jobs:
       - name: Ensure index.html presence
         run: |
           echo "Checking for site/index.html..."
+          mkdir -p site
           if [ ! -f "site/index.html" ]; then
             echo "site/index.html is missing. Creating the file..."
-            mkdir -p site
             echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Skunkworks Academy</title></head><body><h1>Welcome to Skunkworks Academy</h1></body></html>" > site/index.html
             echo "site/index.html created successfully."
           else
@@ -130,7 +132,7 @@ jobs:
           fi
 
       - name: Build Static Site
-        run: npm run build -- site/index.html --dist-dir dist
+        run: npm run build -- --dist-dir dist
         continue-on-error: false
 
       - name: Upload Artifact
