@@ -39,6 +39,22 @@ jobs:
           echo "import 'carbon-components/js/globals/scss/globals'; console.log('Hello, Skunkworks Academy!');" > src/index.js
           echo "Sample files created"
 
+      - name: Ensure Sample Files Exist
+        run: |
+          if [ ! -f "index.html" ]; then
+            echo "Error: index.html file is missing."
+            exit 1
+          fi
+          if [ ! -f "src/styles.scss" ]; then
+            echo "Error: src/styles.scss file is missing."
+            exit 1
+          fi
+          if [ ! -f "src/index.js" ]; then
+            echo "Error: src/index.js file is missing."
+            exit 1
+          fi
+          echo "All sample files are present."
+
       - name: Ensure Proper Permissions
         run: |
           sudo chown -R $USER:$USER .
@@ -132,19 +148,8 @@ jobs:
           echo "index.html file is present."
 
       - name: Build Static Site
-        run: npm run build --if-present || echo "Build failed; attempting to rebuild."
+        run: npm run build
         continue-on-error: false  # Stop the workflow if the build fails
-
-      - name: Rebuild on Failure
-        if: failure()
-        run: |
-          echo "Attempting to rebuild..."
-          npm run build --if-present
-          if [ $? -ne 0 ]; then
-            echo "Rebuild failed."
-            exit 1
-          fi
-        continue-on-error: false  # Stop the workflow if the build fails again
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
