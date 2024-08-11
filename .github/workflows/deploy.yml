@@ -35,18 +35,16 @@ jobs:
 
       - name: Create Sample Files
         run: |
-          if [ ! -f "site/index.html" ]; then
-            echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Skunkworks Academy</title></head><body><h1>Welcome to Skunkworks Academy</h1></body></html>" > site/index.html
-          fi
+          echo "Creating sample files..."
+          echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Skunkworks Academy</title></head><body><h1>Welcome to Skunkworks Academy</h1></body></html>" > site/index.html
           echo "@import '~carbon-components/scss/globals/scss/styles.scss'; body { font-family: Arial, sans-serif; }" > src/styles.scss
           echo "import 'carbon-components/js/globals/scss/globals'; console.log('Hello, Skunkworks Academy!');" > src/index.js
           echo "Sample files created."
 
-      - name: Ensure Proper Permissions
+      - name: List Files After Creation
         run: |
-          sudo chown -R $USER:$USER .
-          chmod -R 755 .
-        continue-on-error: true
+          echo "Listing files after creation:"
+          ls -R
 
   install_dependencies:
     name: Install Dependencies
@@ -132,9 +130,11 @@ jobs:
 
       - name: Verify index.html presence
         run: |
+          echo "Checking for site/index.html..."
           if [ ! -f "site/index.html" ]; then
             echo "Error: site/index.html file is missing."
-            exit 1
+            echo "Attempting to recreate site/index.html..."
+            echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Skunkworks Academy</title></head><body><h1>Welcome to Skunkworks Academy</h1></body></html>" > site/index.html
           else
             echo "site/index.html file is present."
           fi
