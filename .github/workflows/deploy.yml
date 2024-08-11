@@ -34,9 +34,9 @@ jobs:
 
       - name: Create Sample Files
         run: |
-          echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Skunkworks Academy</title></head><body><h1>Welcome to Skunkworks Academy</h1></body></html>" > ./index.html
-          echo "@import '~carbon-components/scss/globals/scss/styles.scss'; body { font-family: Arial, sans-serif; }" > ./src/styles.scss
-          echo "import 'carbon-components/js/globals/scss/globals'; console.log('Hello, Skunkworks Academy!');" > ./src/index.js
+          echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Skunkworks Academy</title></head><body><h1>Welcome to Skunkworks Academy</h1></body></html>" > index.html
+          echo "@import '~carbon-components/scss/globals/scss/styles.scss'; body { font-family: Arial, sans-serif; }" > src/styles.scss
+          echo "import 'carbon-components/js/globals/scss/globals'; console.log('Hello, Skunkworks Academy!');" > src/index.js
           echo "Sample files created"
 
       - name: Ensure Proper Permissions
@@ -124,7 +124,8 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Build Static Site
-        run: npm run build --dist-dir dist
+        run: npm run build
+        working-directory: ${{ github.workspace }}
         continue-on-error: false  # Stop the workflow if the build fails
 
       - name: Upload Artifact
