@@ -25,15 +25,37 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Create Directory Structure and Sample Files
+      - name: Create or Fix Directory Structure and Sample Files
         run: |
-          mkdir -p .github/workflows
-          mkdir -p src
-          mkdir -p dist
-          mkdir -p site
-          echo "Directory structure created."
-          echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Skunkworks Academy</title></head><body><h1>Welcome to Skunkworks Academy</h1></body></html>" > site/index.html
-          echo "Sample index.html created in the site directory."
+          # Check and create necessary directories
+          if [ ! -d ".github/workflows" ]; then
+            echo ".github/workflows directory is missing. Creating..."
+            mkdir -p .github/workflows
+          fi
+          
+          if [ ! -d "src" ]; then
+            echo "src directory is missing. Creating..."
+            mkdir -p src
+          fi
+
+          if [ ! -d "dist" ]; then
+            echo "dist directory is missing. Creating..."
+            mkdir -p dist
+          fi
+
+          if [ ! -d "site" ]; then
+            echo "site directory is missing. Creating..."
+            mkdir -p site
+          fi
+
+          # Check and create the sample index.html file
+          if [ ! -f "site/index.html" ]; then
+            echo "site/index.html is missing. Creating..."
+            echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Skunkworks Academy</title></head><body><h1>Welcome to Skunkworks Academy</h1></body></html>" > site/index.html
+            echo "site/index.html created successfully."
+          else
+            echo "site/index.html file is present."
+          fi
 
   install_dependencies:
     name: Install Dependencies
@@ -119,7 +141,7 @@ jobs:
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Ensure index.html presence
+      - name: Ensure index.html presence and Fix if Necessary
         run: |
           echo "Checking for site/index.html..."
           mkdir -p site
@@ -132,7 +154,8 @@ jobs:
           fi
 
       - name: Build Static Site
-        run: npm run build -- site/index.html --dist-dir dist
+        run: npm run build --dist-dir dist
+        working-directory: site
         continue-on-error: false
 
       - name: Upload Artifact
