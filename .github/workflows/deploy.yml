@@ -25,27 +25,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Create Directory Structure
+      - name: Create Directory Structure and Sample Files
         run: |
           mkdir -p .github/workflows
           mkdir -p src
           mkdir -p dist
           mkdir -p site
-          echo "Directory structure created."
-
-      - name: Create Sample Files
-        run: |
-          mkdir -p site  # Ensure the 'site' directory exists
-          echo "Creating sample files..."
           echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Skunkworks Academy</title></head><body><h1>Welcome to Skunkworks Academy</h1></body></html>" > site/index.html
           echo "@import '~carbon-components/scss/globals/scss/styles.scss'; body { font-family: Arial, sans-serif; }" > src/styles.scss
           echo "import 'carbon-components/js/globals/scss/globals'; console.log('Hello, Skunkworks Academy!');" > src/index.js
-          echo "Sample files created."
-
-      - name: List Files After Creation
-        run: |
-          echo "Listing files after creation:"
-          ls -R
+          echo "Directory structure and sample files created."
 
   install_dependencies:
     name: Install Dependencies
@@ -73,11 +62,10 @@ jobs:
 
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
-        continue-on-error: false
 
       - name: Ensure Global Packages
         run: |
-          npm install -g eslint stylelint jest
+          npm install -g eslint stylelint jest parcel-bundler
 
   lint_and_test:
     name: Lint and Test Code
@@ -133,22 +121,18 @@ jobs:
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Ensure site/ directory exists
-        run: mkdir -p site
-
       - name: Verify index.html presence
         run: |
           echo "Checking for site/index.html..."
           if [ ! -f "site/index.html" ]; then
             echo "Error: site/index.html file is missing."
-            echo "Attempting to recreate site/index.html..."
-            echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Skunkworks Academy</title></head><body><h1>Welcome to Skunkworks Academy</h1></body></html>" > site/index.html
+            exit 1
           else
             echo "site/index.html file is present."
           fi
 
       - name: Build Static Site
-        run: npm run build -- --dist-dir dist --input-dir site
+        run: npm run build -- --dist-dir dist
         continue-on-error: false
 
       - name: Upload Artifact
