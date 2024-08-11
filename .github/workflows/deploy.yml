@@ -80,9 +80,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Add Node Modules to PATH
-        run: |
-          echo "NODE_BIN=$(npm bin)" >> $GITHUB_ENV
-          echo "PATH=\$NODE_BIN:\$PATH" >> $GITHUB_ENV
+        run: echo "PATH=./node_modules/.bin:\$PATH" >> $GITHUB_ENV
 
       - name: Run Linting
         run: npm run lint
