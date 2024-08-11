@@ -81,8 +81,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Add Node Modules to PATH
-        run: echo "NODE_BIN=$(npm bin)" >> $GITHUB_ENV
-        run: echo "PATH=\$NODE_BIN:\$PATH" >> $GITHUB_ENV
+        run: |
+          echo "NODE_BIN=$(npm bin)" >> $GITHUB_ENV
+          echo "PATH=\$NODE_BIN:\$PATH" >> $GITHUB_ENV
 
       - name: Run Linting
         run: npm run lint
@@ -130,8 +131,9 @@ jobs:
           if [ ! -f "site/index.html" ]; then
             echo "Error: site/index.html file is missing."
             exit 1
+          else
+            echo "site/index.html file is present."
           fi
-          echo "site/index.html file is present."
 
       - name: Build Static Site
         run: npm run build -- --dist-dir dist --input-dir site
