@@ -82,8 +82,8 @@ jobs:
 
       - name: Add Node Modules to PATH
         run: |
-          echo "NODE_BIN=$(npm bin)" >> $GITHUB_ENV
-          echo "PATH=\$NODE_BIN:\$PATH" >> $GITHUB_ENV
+          NODE_BIN=$(npm bin)
+          echo "PATH=$NODE_BIN:\$PATH" >> $GITHUB_ENV
 
       - name: Run Linting
         run: npm run lint
