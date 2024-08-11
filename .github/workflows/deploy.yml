@@ -1,4 +1,4 @@
-# Simple and Secure Workflow for Deploying Static Content to GitHub Pages
+# Comprehensive Workflow for Deploying Static Content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
@@ -31,19 +31,22 @@ jobs:
           mkdir -p src
           mkdir -p dist
           mkdir -p site
-          echo "Directory structure created"
+          echo "Directory structure created."
 
       - name: Create Sample Files
         run: |
-          echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Skunkworks Academy</title></head><body><h1>Welcome to Skunkworks Academy</h1></body></html>" > site/index.html
+          if [ ! -f "site/index.html" ]; then
+            echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Skunkworks Academy</title></head><body><h1>Welcome to Skunkworks Academy</h1></body></html>" > site/index.html
+          fi
           echo "@import '~carbon-components/scss/globals/scss/styles.scss'; body { font-family: Arial, sans-serif; }" > src/styles.scss
           echo "import 'carbon-components/js/globals/scss/globals'; console.log('Hello, Skunkworks Academy!');" > src/index.js
-          echo "Sample files created"
+          echo "Sample files created."
 
       - name: Ensure Proper Permissions
         run: |
           sudo chown -R $USER:$USER .
           chmod -R 755 .
+        continue-on-error: true
 
   install_dependencies:
     name: Install Dependencies
@@ -70,7 +73,8 @@ jobs:
         run: npm cache clean --force
 
       - name: Install Dependencies
-        run: npm install --legacy-peer-deps  # Use legacy-peer-deps to resolve conflicts
+        run: npm install --legacy-peer-deps
+        continue-on-error: false
 
   lint_and_test:
     name: Lint and Test Code
@@ -80,29 +84,30 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Add Node Modules to PATH
+      - name: Set NODE_BIN with Debugging
         run: |
           NODE_BIN=$(npm bin 2>/dev/null || echo "/usr/local/bin")
+          echo "NODE_BIN is set to: $NODE_BIN"
           echo "NODE_BIN=$NODE_BIN" >> $GITHUB_ENV
-          echo "PATH=\$NODE_BIN:\$PATH" >> $GITHUB_ENV
+          echo "PATH=$NODE_BIN:$PATH" >> $GITHUB_ENV
 
       - name: Run Linting
         run: npm run lint
         continue-on-error: true
         env:
-          CI: ${{ env.CI }}
+          CI: true
 
       - name: Run Style Linting
         run: npm run lint:styles
         continue-on-error: true
         env:
-          CI: ${{ env.CI }}
+          CI: true
 
       - name: Run Tests
         run: npm test
         continue-on-error: true
         env:
-          CI: ${{ env.CI }}
+          CI: true
 
       - name: Upload Linting and Test Results
         if: failure()
@@ -138,7 +143,7 @@ jobs:
 
       - name: Build Static Site
         run: npm run build -- --dist-dir dist --input-dir site
-        continue-on-error: false  # Stop the workflow if the build fails
+        continue-on-error: false
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
@@ -161,11 +166,9 @@ jobs:
         run: |
           echo "Directories and files before cleanup:"
           ls -la
-
           rm -rf node_modules/
           rm -rf .cache/
           rm -rf dist/
-
           echo "Directories and files after cleanup:"
           ls -la
 
