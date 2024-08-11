@@ -35,6 +35,7 @@ jobs:
 
       - name: Create Sample Files
         run: |
+          mkdir -p site  # Ensure the 'site' directory exists
           echo "Creating sample files..."
           echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Skunkworks Academy</title></head><body><h1>Welcome to Skunkworks Academy</h1></body></html>" > site/index.html
           echo "@import '~carbon-components/scss/globals/scss/styles.scss'; body { font-family: Arial, sans-serif; }" > src/styles.scss
@@ -73,6 +74,10 @@ jobs:
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
         continue-on-error: false
+
+      - name: Ensure Global Packages
+        run: |
+          npm install -g eslint stylelint jest
 
   lint_and_test:
     name: Lint and Test Code
@@ -127,6 +132,9 @@ jobs:
 
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
+
+      - name: Ensure site/ directory exists
+        run: mkdir -p site
 
       - name: Verify index.html presence
         run: |
