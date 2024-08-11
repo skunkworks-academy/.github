@@ -130,7 +130,7 @@ jobs:
           fi
 
       - name: Build Static Site
-        run: npm run build -- --dist-dir dist
+        run: npm run build -- site/index.html --dist-dir dist
         continue-on-error: false
 
       - name: Upload Artifact
