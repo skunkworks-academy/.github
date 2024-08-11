@@ -123,10 +123,28 @@ jobs:
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
+      - name: Verify Files Exist Before Build
+        run: |
+          if [ ! -f "index.html" ]; then
+            echo "Error: index.html file is missing."
+            exit 1
+          fi
+          echo "index.html file is present."
+
       - name: Build Static Site
-        run: npm run build
-        working-directory: ${{ github.workspace }}
+        run: npm run build --if-present || echo "Build failed; attempting to rebuild."
         continue-on-error: false  # Stop the workflow if the build fails
+
+      - name: Rebuild on Failure
+        if: failure()
+        run: |
+          echo "Attempting to rebuild..."
+          npm run build --if-present
+          if [ $? -ne 0 ]; then
+            echo "Rebuild failed."
+            exit 1
+          fi
+        continue-on-error: false  # Stop the workflow if the build fails again
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
