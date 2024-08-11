@@ -1,4 +1,4 @@
-# Comprehensive Workflow for Deploying Static Content to GitHub Pages
+# Simple and Secure Workflow for Deploying Static Content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
@@ -84,12 +84,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Set NODE_BIN with Debugging
+      - name: Ensure Node Modules Path
         run: |
-          NODE_BIN=$(npm bin 2>/dev/null || echo "/usr/local/bin")
-          echo "NODE_BIN is set to: $NODE_BIN"
-          echo "NODE_BIN=$NODE_BIN" >> $GITHUB_ENV
-          echo "PATH=$NODE_BIN:$PATH" >> $GITHUB_ENV
+          export PATH=$(npm prefix)/node_modules/.bin:$PATH
+          echo "PATH=$(npm prefix)/node_modules/.bin:$PATH" >> $GITHUB_ENV
 
       - name: Run Linting
         run: npm run lint
