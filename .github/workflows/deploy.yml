@@ -57,7 +57,7 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies
-        run: npm install  # Or yarn install if you're using Yarn
+        run: npm install --legacy-peer-deps  # Use legacy-peer-deps to resolve conflicts
 
   lint_and_test:
     name: Lint and Test Code
@@ -97,7 +97,7 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies
-        run: npm install  # Or yarn install if you're using Yarn
+        run: npm install --legacy-peer-deps  # Use legacy-peer-deps to resolve conflicts
 
       - name: Build Static Site
         run: npm run build  # Or yarn build
