@@ -1,6 +1,6 @@
 # Contact Information
 
-![Skunkworks Logo](https://github.com/skunkworksza/media/blob/main/skunkworks_logo.png) <!-- You can replace this with the correct link -->
+![Skunkworks logo](https://github.com/Skunkworks-Africa/Media/blob/main/logo_transpartent_200%C3%971200px.png)  <!-- You can replace this with the correct link -->
 
 | Name               | Phone Number      | Email                          | Role         |
 |--------------------|-------------------|---------------------------------|--------------|
