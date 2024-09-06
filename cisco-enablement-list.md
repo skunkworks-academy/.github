@@ -1,6 +1,6 @@
 # Contact Information
 
-![Skunkworks logo](https://github.com/Skunkworks-Africa/Media/blob/main/logo_transpartent_200%C3%971200px.png)  <!-- You can replace this with the correct link -->
+![Skunkworks logo](https://github.com/Skunkworks-Africa/Media/blob/main/logo_transpartent_200%C3%971200px.png)
 
 | Name               | Phone Number      | Email                          | Role         |
 |--------------------|-------------------|---------------------------------|--------------|
@@ -11,6 +11,9 @@
 | ![Badge](https://img.shields.io/badge/Lead-Raydo-orange) **Raydo Matthee**        | +27 83 380 7950    | [raydo.matthee@gmail.com](mailto:raydo.matthee@gmail.com)         | CTO          |
 | ![Badge](https://img.shields.io/badge/Member-Lior-blue) **Lior Rahamim**          | +972 54-595-3181   | [fabio.rahamim@gmail.com](mailto:fabio.rahamim@gmail.com)         | DevOps       |
 | ![Badge](https://img.shields.io/badge/Member-Butshidibule-blue) **Butshidibule Lunde** | 0717071719     | [kenbutshidibule1@gmail.com](mailto:kenbutshidibule1@gmail.com)   | Software Engineer |
+| ![Badge](https://img.shields.io/badge/Member-Jan-blue) **Jan de Kock**            | 0823314456         | [jan.dekock@gijima.com](mailto:jan.dekock@gijima.com)             | Engineer      |
+| ![Badge](https://img.shields.io/badge/Member-Sant--Marie-blue) **Sant-Marie Smit** | 0789714712         | [santmarie.smit@gmail.com](mailto:santmarie.smit@gmail.com)       | Analyst      |
+| ![Badge](https://img.shields.io/badge/Member-Kan-blue) **Kan**                    | [No number provided] | [No email provided] | [No role provided] |
 
 ---
 
@@ -18,4 +21,11 @@
 - **Want to join the team?** Click [here](https://www.skunkworks.africa) to learn more!
 - **Connect with us** on [LinkedIn](https://www.linkedin.com/company/skunkworksza/)
 
-![Footer Graphic](https://github.com/skunkworksza/media/blob/main/footer_graphic.png) <!-- Placeholder for footer graphic -->
+---
+
+## Follow Skunkworks on Social Media:
+
+- [LinkedIn](https://www.linkedin.com/company/skunkworksza/)
+- [Twitter](https://twitter.com/skunkworksza)  
+- [Facebook](https://www.facebook.com/skunkworksza)
+- [Instagram](https://www.instagram.com/skunkworksza)
