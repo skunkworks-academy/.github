@@ -1,7 +1,5 @@
 # Contact Information
 
-![Skunkworks logo](https://github.com/Skunkworks-Africa/Media/blob/main/logo_transpartent_200%C3%971200px.png)
-
 ---
 
 | Name               | Phone Number      | Email                          | Role         |
@@ -34,3 +32,9 @@
 - [Facebook](https://www.facebook.com/skunkworksza)
 - [Instagram](https://www.instagram.com/skunkworksafrica)
 - [Youtube](https://www.youtube.com/@skunkworksza)
+
+---
+
+![Skunkworks logo](https://github.com/Skunkworks-Africa/Media/blob/main/logo_transpartent_200%C3%971200px.png)
+
+---
