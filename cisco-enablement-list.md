@@ -13,7 +13,7 @@
 | ![Badge](https://img.shields.io/badge/Member-Butshidibule-blue) **Butshidibule Lunde** | 0717071719     | [kenbutshidibule1@gmail.com](mailto:kenbutshidibule1@gmail.com)   | Software Engineer |
 | ![Badge](https://img.shields.io/badge/Member-Jan-blue) **Jan de Kock**            | 0823314456         | [jan.dekock@gijima.com](mailto:jan.dekock@gijima.com)             | Engineer      |
 | ![Badge](https://img.shields.io/badge/Member-Sant--Marie-blue) **Sant-Marie Smit** | 0789714712         | [santmarie.smit@gmail.com](mailto:santmarie.smit@gmail.com)       | Analyst      |
-| ![Badge](https://img.shields.io/badge/Member-Kan-blue) **Kan**                    | [No number provided] | [No email provided] | [No role provided] |
+| ![Badge](https://image.sheilds.io/badge/Member-Neol-blue) **Noel Bezuidenhout** | +27 81 333 8682 | [noelbezuidenhout@gmail.com](mailto:noelbezuidenhout@gmail.com)  | Technical Sales/Instructor   |
 
 ---
 
