@@ -15,6 +15,8 @@
 | ![Badge](https://img.shields.io/badge/Member-Sant--Marie-blue) **Sant-Marie Smit** | 0789714712         | [santmarie.smit@gmail.com](mailto:santmarie.smit@gmail.com)       | Analyst / Instructor    |
 | ![Badge](https://img.shields.io/badge/Member-Neol-yellow) **Noel Bezuidenhout** | +27 81 333 8682 | [noelbezuidenhout@gmail.com](mailto:noelbezuidenhout@gmail.com)  | Technical Sales / Instructor     |
 | ![Badge](https://img.shields.io/badge/Member-Tshepo-blue) **Tshepo Khathatse** | +27 71 210 2060 | [Khathatsetshepo54@gmail.com](mailto:Khathatsetshepo54@gmail.com)  | Engineer     |
+| ![Badge](https://img.shields.io/badge/Member-Andy-blue) **Andy Mwamba** | +27 82 794 4995 | [Mwambaandy06@gmail.com](mailto:Mwambaandy06@gmail.com)  | Engineer     |
+
 ---
 
 ## Additional Info:
