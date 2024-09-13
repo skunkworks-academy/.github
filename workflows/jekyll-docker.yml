@@ -1,4 +1,4 @@
-name: Jekyll Docker CI
+name: React Carbon Design CI/CD
 
 on:
   push:
@@ -12,82 +12,51 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the repository
       - uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js (for running lint and tests)
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # Specify Node.js version
+          node-version: '18'
 
-      # Step 3: Install dependencies
-      - name: Install npm dependencies
-        run: npm install
+      - name: Install dependencies
+        run: npm ci
 
-      # Step 4: Run ESLint (for JavaScript/TypeScript files)
       - name: Run ESLint
         run: npm run lint
-        continue-on-error: true  # Optional: fail on lint error if desired
+        continue-on-error: true
 
-      # Step 5: Run StyleLint (for CSS/SCSS files)
       - name: Run StyleLint
         run: npm run lint:styles
-        continue-on-error: true  # Optional: fail on lint error if desired
+        continue-on-error: true
 
-      # Step 6: Run Tests (with Jest or other testing framework)
       - name: Run Tests
         run: npm test
-        continue-on-error: false  # This should fail the build if tests fail
+        continue-on-error: false
 
   build-and-deploy:
     name: Build and Deploy
     runs-on: ubuntu-latest
+    needs: lint-and-test
 
     steps:
-      # Step 1: Check out the repository
       - uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js (for building and deploying)
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # Specify Node.js version
+          node-version: '18'
 
-      # Step 3: Install dependencies
-      - name: Install npm dependencies
-        run: npm install --legacy-peer-deps
+      - name: Install dependencies
+        run: npm ci
 
-      # Step 4: Ensure the `dist` directory exists
-      - name: Create dist directory
-        run: mkdir -p dist
+      - name: Build React app
+        run: npm run build
 
-      # Step 5: Check for `site/index.html`, create if necessary
-      - name: Ensure site/index.html exists
-        run: |
-          mkdir -p site
-          if [ ! -f "site/index.html" ]; then
-            echo "Creating missing site/index.html"
-            echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Skunkworks Academy</title></head><body><h1>Welcome to Skunkworks Academy</h1></body></html>" > site/index.html
-            echo "site/index.html created."
-          else
-            echo "site/index.html already exists."
-
-      # Step 6: Build the site using Jekyll Docker
-      - name: Build the site in the Jekyll Docker container
-        run: |
-          docker run --rm \
-            -v ${{ github.workspace }}:/srv/jekyll \
-            -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-            -v ${{ github.workspace }}/vendor/bundle:/usr/local/bundle \
-            jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
-
-      # Step 7: Upload the built site for deployment
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: build
 
-      # Step 8: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
