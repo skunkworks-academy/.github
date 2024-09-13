@@ -2,21 +2,21 @@
 
 ---
 
-| Name        | Surname       | Phone Number      | Email                                                | Role                        |
+| Name        | Surname       | Cell Phone Number  | Email Address                                        | Title                       |
 |-------------|---------------|-------------------|------------------------------------------------------|-----------------------------|
 | ![Badge](https://img.shields.io/badge/Member-Emmanuel-blue)  | Bvumbamera    | +27 65 387 1785    | [Emmanuel.Bvumbamera@cyberretaliatorsolutions.com](mailto:Emmanuel.Bvumbamera@cyberretaliatorsolutions.com) | CRS                          |
 | ![Badge](https://img.shields.io/badge/Member-Tate-blue)       | Tichiwangana  | +27 79 402 3829    | [Tate.Tichiwangana@cyberretaliatorsolutions.com](mailto:Tate.Tichiwangana@cyberretaliatorsolutions.com)     | CRS                          |
 | ![Badge](https://img.shields.io/badge/Member-Cerisha-blue)    | Singh         | +27 74 264 5578    | [Cerisingh123@gmail.com](mailto:Cerisingh123@gmail.com)                                            | Urgent Calls Only            |
 | ![Badge](https://img.shields.io/badge/Member-Miguel-blue)     | Nascimento    | +27 76 907 2926    | [migzy.za@gmail.com](mailto:migzy.za@gmail.com)                                              | Engineer                     |
-| ![Badge](https://img.shields.io/badge/Member-Sherise-blue)    | Van Dyk       | 0723375782         | [Sherise.vandyk00@gmail.com](mailto:Sherise.vandyk00@gmail.com)                                | DevOps                       |
+| ![Badge](https://img.shields.io/badge/Member-Sherise-blue)    | Van Dyk       | 072 337 5782       | [Sherise.vandyk00@gmail.com](mailto:Sherise.vandyk00@gmail.com)                                | DevOps                       |
 | ![Badge](https://img.shields.io/badge/Member-Ricky-green)     | Roberts       | +27 64 978 7012    | [ricky@skunkworks.africa](mailto:ricky@skunkworks.africa)                                      | Project Lead / Instructor    |
 | ![Badge](https://img.shields.io/badge/Member-Celumusa-blue)   | Shezi         | +27 82 637 6330    | [celumusaofficial@gmail.com](mailto:celumusaofficial@gmail.com)                               | Security Specialist          |
 | ![Badge](https://img.shields.io/badge/Lead-Raydo-orange)      | Matthee       | +27 83 380 7950    | [raydo@skunkworks.africa](mailto:raydo@skunkworks.africa)                                      | CEO / Instructor             |
 | ![Badge](https://img.shields.io/badge/Member-Lior-red)        | Rahamim       | +972 54-595-3181   | [fabio.rahamim@gmail.com](mailto:fabio.rahamim@gmail.com)                                      | CISO / Instructor            |
-| ![Badge](https://img.shields.io/badge/Member-Butshidibule-blue)| Lunde        | 0717071719         | [kenbutshidibule1@gmail.com](mailto:kenbutshidibule1@gmail.com)                                | Software Engineer            |
-| ![Badge](https://img.shields.io/badge/Member-Jan-blue)        | de Kock       | 0823314456         | [jan.dekock@gijima.com](mailto:jan.dekock@gijima.com)                                          | Engineer                     |
-| ![Badge](https://img.shields.io/badge/Member-Sant--Marie-blue)| Smit          | 0789714712         | [santmarie.smit@gmail.com](mailto:santmarie.smit@gmail.com)                                    | Analyst / Instructor         |
-| ![Badge](https://img.shields.io/badge/Member-Neol-yellow)     | Bezuidenhout  | +27 81 333 8682    | [noelbezuidenhout@gmail.com](mailto:noelbezuidenhout@gmail.com)                                | Technical Sales / Instructor |
+| ![Badge](https://img.shields.io/badge/Member-Butshidibule-blue)| Lunde        | 071 707 1719       | [kenbutshidibule1@gmail.com](mailto:kenbutshidibule1@gmail.com)                                | Software Engineer            |
+| ![Badge](https://img.shields.io/badge/Member-Jan-blue)        | de Kock       | 082 331 4456       | [jan.dekock@gijima.com](mailto:jan.dekock@gijima.com)                                          | Engineer                     |
+| ![Badge](https://img.shields.io/badge/Member-Sant--Marie-blue)| Smit          | 078 971 4712       | [santmarie.smit@gmail.com](mailto:santmarie.smit@gmail.com)                                    | Analyst / Instructor         |
+| ![Badge](https://img.shields.io/badge/Member-Noel-yellow)     | Bezuidenhout  | +27 81 333 8682    | [noelbezuidenhout@gmail.com](mailto:noelbezuidenhout@gmail.com)                                | Technical Sales / Instructor |
 | ![Badge](https://img.shields.io/badge/Member-Tshepo-blue)     | Khathatse     | +27 71 210 2060    | [Khathatsetshepo54@gmail.com](mailto:Khathatsetshepo54@gmail.com)                              | Engineer                     |
 | ![Badge](https://img.shields.io/badge/Member-Andy-blue)       | Mwamba        | +27 82 794 4995    | [Mwambaandy06@gmail.com](mailto:Mwambaandy06@gmail.com)                                        | Engineer                     |
 
@@ -40,6 +40,6 @@
 
 ---
 
-![Skunkworks logo](https://github.com/Skunkworks-Africa/Media/blob/main/logo_transpartent_200%C3%971200px.png)
+![Skunkworks logo](https://github.com/Skunkworks-Africa/Media/blob/main/logo_transparent_200%C3%971200px.png)
 
 ---
