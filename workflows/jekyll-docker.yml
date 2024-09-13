@@ -1,0 +1,55 @@
+name: Jekyll site CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure Docker is installed
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+        if: runner.os == 'Linux'
+
+      - name: Cache Jekyll gems
+        uses: actions/cache@v3
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: Build the site in the jekyll/builder container
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/srv/jekyll \
+            -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+            -v ${{ github.workspace }}/vendor/bundle:/usr/local/bundle \
+            jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+
+      - name: Upload built site as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: site
+          path: _site
+
+      - name: Notify Slack on Failure
+        if: failure()
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"The Jekyll site build has failed!"}' ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      # Optional: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
