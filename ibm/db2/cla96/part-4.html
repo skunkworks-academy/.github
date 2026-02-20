@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>CLA96G – Part 4</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<nav>
+  <a href="index.html">Portal</a>
+  <a href="part-1.html">Part 1</a>
+  <a href="part-2.html">Part 2</a>
+  <a href="part-3.html">Part 3</a>
+  <a href="part-4.html">Part 4</a>
+  <a href="assessment.html">Final Assessment</a>
+  <a href="analytics.html">Analytics</a>
+</nav>
+<header>
+  <h1>Part 4 – Performance and Tuning Optimization</h1>
+  <p>Units 1–4. Statistics, indexing, EXPLAIN, and monitoring-based tuning.</p>
+</header>
+
+<div class="wrap" id="content"></div>
+
+<script src="app.js"></script>
+<script src="scorm-api.js"></script>
+<script src="quiz-engine.js"></script>
+<script src="data/part4-data.js"></script>
+
+<script>
+  LMS.renderPart({
+    partKey: "part4",
+    pageName: "part-4",
+    storageKey: LMS_KEYS.part4,
+    masteryThreshold: 75,
+    enableTimed: true,
+    defaultMinutes: 15
+  });
+</script>
+</body>
+</html>
