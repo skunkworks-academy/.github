@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Faculty | Skunkworks Academy</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Meet the faculty of Skunkworks Academy — industry practitioners, architects, and instructors delivering world-class technology education." />
+  <meta name="author" content="Skunkworks Academy" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Faculty | Skunkworks Academy">
+  <meta property="og:description" content="Industry practitioners delivering real-world technology education.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://skunkworksacademy.com/faculty/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <style>
+    :root {
+      --bg-dark: #0b0b0d;
+      --bg-light: #ffffff;
+      --primary: #2563eb;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --card-border: #e5e7eb;
+      --focus-ring: #93c5fd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, sans-serif;
+      color: var(--text-main);
+      background: #f9fafb;
+      line-height: 1.6;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--focus-ring);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    header {
+      background: var(--bg-dark);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .faculty-card {
+      background: var(--bg-light);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .faculty-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      }
+    }
+
+    .faculty-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: #e5e7eb;
+      display: block;
+    }
+
+    .faculty-body {
+      padding: 1.25rem;
+    }
+
+    .faculty-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .faculty-role {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .faculty-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      background: #eef2ff;
+      color: #1e40af;
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+
+    .faculty-links a {
+      font-size: 0.9rem;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    footer {
+      background: var(--bg-dark);
+      color: #d1d5db;
+      padding: 2.5rem 1.5rem;
+      margin-top: 4rem;
+    }
+
+    footer .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    footer h4 {
+      margin-bottom: 0.75rem;
+      color: white;
+    }
+
+    footer a {
+      color: #d1d5db;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="/">🎓 Skunkworks Academy</a>
+  <a href="/contact">Contact</a>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h1>Meet Our Faculty</h1>
+    <p>
+      Skunkworks Academy instructors are active industry practitioners —
+      architects, engineers, security specialists, and educators delivering
+      real-world expertise, not theory slides.
+    </p>
+  </section>
+
+ <section class="faculty-grid">
+
+  <!-- Jolandi Van Heerden -->
+  <article class="faculty-card">
+    <picture>
+      <source srcset="/faculty/assets/webp/jolandi-van-heerden.webp" type="image/webp">
+      <img src="/faculty/assets/jpg/jolandi-van-heerden.jpg" alt="Jolandi Van Heerden"
+           class="faculty-photo" loading="lazy" width="400" height="400">
+    </picture>
+    <div class="faculty-body">
+      <div class="faculty-name">Jolandi Van Heerden</div>
+      <div class="faculty-role">Faculty Contributor</div>
+      <div class="faculty-tags">
+        <span class="tag">Operations</span>
+        <span class="tag">Coordination</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Brandon Mloyi -->
+  <article class="faculty-card">
+    <picture>
+      <source srcset="/faculty/assets/webp/brandon-mloyi.webp" type="image/webp">
+      <img src="/faculty/assets/jpg/brandon-mloyi.jpg" alt="Brandon Mloyi"
+           class="faculty-photo" loading="lazy" width="400" height="400">
+    </picture>
+    <div class="faculty-body">
+      <div class="faculty-name">Brandon Mloyi</div>
+      <div class="faculty-role">Cloud Administrator</div>
+      <div class="faculty-tags">
+        <span class="tag">Cloud</span>
+        <span class="tag">Infrastructure</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Clifton Molele -->
+  <article class="faculty-card">
+    <picture>
+      <source srcset="/faculty/assets/webp/clifton-molele.webp" type="image/webp">
+      <img src="/faculty/assets/jpg/clifton-molele.jpg" alt="Clifton Molele"
+           class="faculty-photo" loading="lazy" width="400" height="400">
+    </picture>
+    <div class="faculty-body">
+      <div class="faculty-name">Clifton Molele</div>
+      <div class="faculty-role">Design, Creativity & Problem Solving</div>
+      <div class="faculty-tags">
+        <span class="tag">Design</span>
+        <span class="tag">UX</span>
+        <span class="tag">Creativity</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Bradley Nel -->
+  <article class="faculty-card">
+    <picture>
+      <source srcset="/faculty/assets/webp/bradley-nel.webp" type="image/webp">
+      <img src="https://raw.githubusercontent.com/skunkworks-academy/www/refs/heads/main/faculty/assets/bradley-nel.jpg"
+           class="faculty-photo" loading="lazy" width="400" height="400">
+    </picture>
+    <div class="faculty-body">
+      <div class="faculty-name">Bradley Nel</div>
+      <div class="faculty-role">Senior Architect</div>
+      <div class="faculty-tags">
+        <span class="tag">Architecture</span>
+        <span class="tag">Enterprise</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Selaelo Langa -->
+  <article class="faculty-card">
+    <picture>
+      <source srcset="/faculty/assets/webp/selaelo-langa.webp" type="image/webp">
+      <img src="/faculty/assets/jpg/selaelo-langa.jpg" alt="Selaelo Langa"
+           class="faculty-photo" loading="lazy" width="400" height="400">
+    </picture>
+    <div class="faculty-body">
+      <div class="faculty-name">Selaelo Langa</div>
+      <div class="faculty-role">Lead Frontend Engineer</div>
+      <div class="faculty-tags">
+        <span class="tag">Frontend</span>
+        <span class="tag">UI</span>
+        <span class="tag">Web</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Malusi Mthiyane -->
+  <article class="faculty-card">
+    <picture>
+      <source srcset="/faculty/assets/webp/malusi-mthiyane.webp" type="image/webp">
+      <img src="/faculty/assets/jpg/malusi-mthiyane.jpg" alt="Malusi Mthiyane"
+           class="faculty-photo" loading="lazy" width="400" height="400">
+    </picture>
+    <div class="faculty-body">
+      <div class="faculty-name">Malusi Mthiyane</div>
+      <div class="faculty-role">ICT Graduate</div>
+      <div class="faculty-tags">
+        <span class="tag">ICT</span>
+        <span class="tag">Foundations</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Dan Opiyo -->
+  <article class="faculty-card">
+    <picture>
+      <source srcset="/faculty/assets/webp/dan-opiyo.webp" type="image/webp">
+      <img src="/faculty/assets/jpg/dan-opiyo.jpg" alt="Dan Opiyo"
+           class="faculty-photo" loading="lazy" width="400" height="400">
+    </picture>
+    <div class="faculty-body">
+      <div class="faculty-name">Dan Opiyo</div>
+      <div class="faculty-role">Cloud Engineer & Technical Trainer</div>
+      <div class="faculty-tags">
+        <span class="tag">AWS</span>
+        <span class="tag">Azure</span>
+        <span class="tag">Training</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Zamri Marais -->
+  <article class="faculty-card">
+    <picture>
+      <source srcset="/faculty/assets/webp/zamri-marais.webp" type="image/webp">
+      <img src="/faculty/assets/jpg/zamri-marais.jpg" alt="Zamri Marais"
+           class="faculty-photo" loading="lazy" width="400" height="400">
+    </picture>
+    <div class="faculty-body">
+      <div class="faculty-name">Zamri Marais</div>
+      <div class="faculty-role">HR Manager</div>
+      <div class="faculty-tags">
+        <span class="tag">HR</span>
+        <span class="tag">People</span>
+        <span class="tag">Talent</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Emmanuel Okechukwu -->
+  <article class="faculty-card">
+    <picture>
+      <source srcset="/faculty/assets/webp/emmanuel-okechukwu.webp" type="image/webp">
+      <img src="/faculty/assets/jpg/emmanuel-okechukwu.jpg" alt="Emmanuel Okechukwu"
+           class="faculty-photo" loading="lazy" width="400" height="400">
+    </picture>
+    <div class="faculty-body">
+      <div class="faculty-name">Emmanuel Okechukwu</div>
+      <div class="faculty-role">Growth-Focused Digital Marketer</div>
+      <div class="faculty-tags">
+        <span class="tag">Marketing</span>
+        <span class="tag">SEO</span>
+        <span class="tag">Growth</span>
+      </div>
+    </div>
+  </article>
+
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>About Skunkworks Academy</h4>
+      <p>Empowering professionals through cutting-edge technology education.</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <a href="/about">About</a>
+      <a href="/courses">Courses</a>
+      <a href="/faculty">Faculty</a>
+    </div>
+
+    <div>
+      <h4>Legal</h4>
+      <a href="/terms">Terms &amp; Conditions</a>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
