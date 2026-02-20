@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/ibm/cla93/favicon.ico" type="image/x-icon">
+  <title>CLA93 – Part 3 | Security & Concurrency</title>
+
+  <style>
+    :root {
+      --primary: #0f62fe;
+      --bg: #0b1220;
+      --card: #121a2b;
+      --text: #e6edf6;
+      --muted: #9aa8bd;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 60px 20px 30px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 0.95rem;
+    }
+
+    nav {
+      text-align: center;
+      padding: 15px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin: 0 10px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      border-left: 4px solid var(--primary);
+      padding-left: 10px;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: var(--muted);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
+
+      h2 {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Part 3 – Security & Concurrency</h1>
+  <p>
+    Understanding how Db2 manages transaction integrity, locking behavior,
+    and secure access control in enterprise production environments.
+  </p>
+</header>
+
+<nav>
+  <a href="/ibm/cla93/">Home</a>
+  <a href="/ibm/cla93/part-1">Part 1</a>
+  <a href="/ibm/cla93/part-2">Part 2</a>
+  <a href="/ibm/cla93/part-4">Part 4</a>
+  <a href="/ibm/cla93/assessment">Assessment</a>
+</nav>
+
+<div class="container">
+
+  <section class="card">
+    <h2>Concurrency & Locking</h2>
+    <ul>
+      <li>Isolation levels: UR, CS (default), RS, RR</li>
+      <li>Lock modes: Shared (S), Exclusive (X), Intent locks</li>
+      <li>Lock escalation governed by LOCKLIST and MAXLOCKS</li>
+      <li>Deadlocks vs lock timeouts — understand the difference</li>
+      <li>Use MON_GET_CONNECTION and sysibmadm.mon_lockwaits for diagnostics</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Security & Access Control</h2>
+    <ul>
+      <li>Authentication vs Authorization</li>
+      <li>Authorities: SYSADM, DBADM, SECADM, DATAACCESS</li>
+      <li>Implement separation of duties</li>
+      <li>Prefer Roles over direct user grants</li>
+      <li>Review catalog authorization views regularly</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Advanced Protection</h2>
+    <ul>
+      <li>TLS encryption for data in transit</li>
+      <li>Db2 native encryption for data at rest</li>
+      <li>Row and Column Access Control (RCAC)</li>
+      <li>Trusted Context for 3-tier architectures</li>
+      <li>Audit policies for compliance and traceability</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Key DBA Takeaways</h2>
+    <ul>
+      <li>Short transactions reduce lock contention</li>
+      <li>Monitor deadlocks proactively</li>
+      <li>Enforce least privilege at all levels</li>
+      <li>Encrypt both in transit and at rest</li>
+      <li>Always design for both performance and security together</li>
+    </ul>
+  </section>
+
+</div>
+
+<footer>
+  © 2026 Skunkworks Academy | IBM Db2 12.1 Training
+</footer>
+
+</body>
+</html>
