@@ -1,11 +1,11 @@
 # Skunkworks Academy
 
-![GitHub license](https://img.shields.io/github/license/Skunkworks-Academy/.github)
-![GitHub issues](https://img.shields.io/github/issues/Skunkworks-Academy/.github)
-![GitHub forks](https://img.shields.io/github/forks/Skunkworks-Academy/.github)
-![GitHub stars](https://img.shields.io/github/stars/Skunkworks-Academy/.github)
-![GitHub watchers](https://img.shields.io/github/watchers/Skunkworks-Academy/.github)
-![GitHub last commit](https://img.shields.io/github/last-commit/Skunkworks-Academy/.github)
+![GitHub license](https://img.shields.io/github/license/skunkworks-academy/.github)
+![GitHub issues](https://img.shields.io/github/issues/skunkworks-academy/.github)
+![GitHub forks](https://img.shields.io/github/forks/skunkworks-academy/.github)
+![GitHub stars](https://img.shields.io/github/stars/skunkworks-academy/.github)
+![GitHub watchers](https://img.shields.io/github/watchers/skunkworks-academy/.github)
+![GitHub last commit](https://img.shields.io/github/last-commit/skunkworks-academy/.github)
 
 ## Description
 
@@ -13,7 +13,7 @@ This repository contains the resources and documentation for the Skunkworks Acad
 
 ## Website
 
-Visit the Skunkworks Academy at [https://academy.skunkworks.africa](https://academy.skunkworks.africa).
+Visit the Skunkworks Academy at [https://skunkworksacademy.com](https://skunkworksacademy.com).
 
 ## Topics
 
@@ -41,5 +41,5 @@ We welcome contributions! Please see the [CONTRIBUTING](CONTRIBUTING.md) guideli
 
 ## Contact
 
-For more information, reach out to us via the [website](https://academy.skunkworks.africa).
+For more information, reach out to us via the [website](https://skunkworksacademy.com).
 
