@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skunkworks Academy • Microsoft Training</title>
+
+  <!-- Carbon (as per your base) -->
+  <link href="https://unpkg.com/carbon-components/css/carbon-components.min.css" rel="stylesheet">
+
+  <!-- Font Awesome (as per your base) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Bootstrap (as per your base) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+
+  <!-- Favicon (as per your base) -->
+  <link
+    href="https://github.com/skunkworksza/www/blob/main/assets/skunkworks/logo-skunkworks-trans%2040%20%C3%97%2040%20px.png?raw=true"
+    rel="icon"
+    type="image/png"
+  />
+
+  <!-- IBM Plex Sans (as per your base) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Your attached CSS (normalized paths) -->
+  <!-- 1) Reset / global first -->
+  <link rel="stylesheet" href="./css/styles.css">
+  <!-- 2) Your site styles after -->
+  <link rel="stylesheet" href="./css/main.css">
+
+  <style>
+    /* Minimal glue to guarantee the layout matches your sidebar screenshot,
+       while still honoring your attached CSS files as the base. */
+
+    :root {
+      --sw-bg: #0b0f14;
+      --sw-panel: #0f1720;
+      --sw-border: #243041;
+      --sw-text: #e6edf3;
+      --sw-muted: #9fb0c2;
+      --sw-accent: #0f62fe;
+      --sw-accent-hover: #0353e9;
+    }
+
+    /* keep your original feel but ensure consistent full-height layout */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "IBM Plex Sans", sans-serif;
+      background: var(--sw-bg);
+      color: var(--sw-text);
+      min-height: 100vh;
+    }
+
+    .sw-topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #000;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 14px 16px;
+    }
+
+    .sw-topbar__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .sw-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .sw-brand:hover { color: var(--sw-accent); }
+
+    .sw-brand__logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      object-fit: contain;
+      background: #0b0f14;
+      border: 1px solid rgba(255,255,255,0.10);
+      padding: 6px;
+    }
+
+    .sw-brand__title {
+      font-weight: 700;
+      letter-spacing: .2px;
+      line-height: 1.1;
+    }
+
+    .sw-brand__subtitle {
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+      margin-top: 2px;
+    }
+
+    .sw-search {
+      width: min(520px, 52vw);
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--sw-border);
+      background: var(--sw-panel);
+      color: var(--sw-text);
+      outline: none;
+    }
+
+    .sw-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: calc(100vh - 72px);
+    }
+
+    .sw-sidebar {
+      border-right: 1px solid var(--sw-border);
+      background: rgba(15,23,32,0.35);
+      padding: 14px 10px;
+    }
+
+    .sw-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sw-nav a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--sw-text);
+      border: 1px solid transparent;
+    }
+
+    .sw-nav a:hover {
+      background: rgba(17,26,36,0.8);
+      border-color: var(--sw-border);
+    }
+
+    .sw-nav a[aria-current="page"] {
+      background: rgba(15,98,254,0.18);
+      border-color: rgba(15,98,254,0.40);
+    }
+
+    .sw-content {
+      padding: 22px;
+      max-width: 1200px;
+    }
+
+    .sw-h1 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .sw-muted {
+      margin: 0 0 18px;
+      color: var(--sw-muted);
+    }
+
+    .sw-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .sw-card {
+      display: block;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid var(--sw-border);
+      background: rgba(15,23,32,0.55);
+      text-decoration: none;
+      color: var(--sw-text);
+      transition: transform .08s ease, border-color .08s ease, background .08s ease;
+    }
+
+    .sw-card:hover {
+      transform: translateY(-1px);
+      background: rgba(17,26,36,0.8);
+      border-color: rgba(15,98,254,0.45);
+    }
+
+    .sw-card__title { font-weight: 700; margin-bottom: 6px; }
+    .sw-card__meta { color: var(--sw-muted); font-size: 13px; line-height: 1.4; }
+
+    @media (max-width: 980px) {
+      .sw-layout { grid-template-columns: 1fr; }
+      .sw-sidebar { border-right: none; border-bottom: 1px solid var(--sw-border); }
+      .sw-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .sw-search { width: 100%; }
+    }
+
+    @media (max-width: 560px) {
+      .sw-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Bar -->
+  <header class="sw-topbar">
+    <div class="sw-topbar__inner">
+      <a class="sw-brand" href="./index.html">
+        <img class="sw-brand__logo" src="./microsoft-logo.png" alt="Microsoft">
+        <div>
+          <div class="sw-brand__title">Skunkworks Academy</div>
+          <div class="sw-brand__subtitle">Microsoft Training Catalog</div>
+        </div>
+      </a>
+
+      <input id="search" class="sw-search" type="search" placeholder="Search (e.g., AZ-900, MS-102, PL-900)">
+    </div>
+  </header>
+
+  <!-- Layout -->
+  <main class="sw-layout">
+    <!-- Sidebar -->
+    <aside class="sw-sidebar">
+      <nav class="sw-nav">
+        <a href="./training/all/" data-route="all">All training</a>
+        <a href="./training/azure/" data-route="azure">Azure training</a>
+        <a href="./training/dynamics365/" data-route="dynamics365">Dynamics 365 training</a>
+        <a href="./training/copilot/" data-route="copilot">Microsoft Copilot training</a>
+        <a href="./training/microsoft365/" data-route="microsoft365">Microsoft 365 training</a>
+        <a href="./training/power-platform/" data-route="power-platform">Microsoft Power Platform training</a>
+        <a href="./training/labs/" data-route="labs">Labs</a>
+      </nav>
+    </aside>
+
+    <!-- Content -->
+    <section class="sw-content">
+      <h1 class="sw-h1">Microsoft training</h1>
+      <p class="sw-muted">
+        Browse by category on the left. Use search to filter course tiles.
+      </p>
+
+      <div class="sw-grid" id="cards">
+        <a class="sw-card" href="./training/azure/">
+          <div class="sw-card__title">Azure training</div>
+          <div class="sw-card__meta">AZ-900 • AZ-104 • AZ-305 • Governance & security</div>
+        </a>
+
+        <a class="sw-card" href="./training/dynamics365/">
+          <div class="sw-card__title">Dynamics 365 training</div>
+          <div class="sw-card__meta">Business Central • Sales • Customer Service</div>
+        </a>
+
+        <a class="sw-card" href="./training/copilot/">
+          <div class="sw-card__title">Microsoft Copilot training</div>
+          <div class="sw-card__meta">Adoption • prompting • governance • security</div>
+        </a>
+
+        <a class="sw-card" href="./training/microsoft365/">
+          <div class="sw-card__title">Microsoft 365 training</div>
+          <div class="sw-card__meta">MS-900 • MS-102 • Teams • Exchange • Identity</div>
+        </a>
+
+        <a class="sw-card" href="./training/power-platform/">
+          <div class="sw-card__title">Microsoft Power Platform training</div>
+          <div class="sw-card__meta">PL-900 • PL-300 • Power Apps • Automate • BI</div>
+        </a>
+
+        <a class="sw-card" href="./training/labs/">
+          <div class="sw-card__title">Labs</div>
+          <div class="sw-card__meta">Hands-on practicals • guided exercises • outcomes</div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bootstrap bundle (as per your base) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- Optional local JS (only if you add it) -->
+  <script>
+    (function () {
+      // Mark active nav item based on URL
+      const path = (location.pathname || "").toLowerCase();
+      document.querySelectorAll(".sw-nav a").forEach(a => {
+        const href = (a.getAttribute("href") || "").replace("./", "").toLowerCase();
+        if (href && path.includes(href)) a.setAttribute("aria-current", "page");
+      });
+
+      // Card search filter
+      const search = document.getElementById("search");
+      const cards = Array.from(document.querySelectorAll("#cards .sw-card"));
+      if (!search || !cards.length) return;
+
+      search.addEventListener("input", () => {
+        const q = search.value.trim().toLowerCase();
+        cards.forEach(card => {
+          const txt = card.innerText.toLowerCase();
+          card.style.display = txt.includes(q) ? "" : "none";
+        });
+      });
+    })();
+  </script>
+
+  <!-- If you REALLY have ./js/index.js, uncomment this -->
+  <!-- <script src="./js/index.js"></script> -->
+</body>
+</html>
