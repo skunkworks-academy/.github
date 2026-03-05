@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Skunkworks Academy • Microsoft Training</title>
+
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img class="brand__logo" src="./microsoft-logo.png" alt="Microsoft" />
+      <div class="brand__text">
+        <div class="brand__title">Skunkworks Academy</div>
+        <div class="brand__subtitle">Microsoft Training Catalog</div>
+      </div>
+    </div>
+
+    <div class="topbar__actions">
+      <input id="search" class="search" type="search" placeholder="Search courses (e.g., AZ-900, MS-102, PL-900)" />
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <nav class="nav">
+        <a class="nav__item" href="./training/all/">All training</a>
+        <a class="nav__item" href="./training/azure/">Azure training</a>
+        <a class="nav__item" href="./training/dynamics365/">Dynamics 365 training</a>
+        <a class="nav__item" href="./training/copilot/">Microsoft Copilot training</a>
+        <a class="nav__item" href="./training/microsoft365/">Microsoft 365 training</a>
+        <a class="nav__item" href="./training/power-platform/">Microsoft Power Platform training</a>
+        <a class="nav__item" href="./training/labs/">Labs</a>
+      </nav>
+    </aside>
+
+    <section class="content">
+      <h1 class="h1">Microsoft training</h1>
+      <p class="muted">
+        Browse by category using the left menu. Use search to quickly find course codes and tracks.
+      </p>
+
+      <div class="grid" id="cards">
+        <a class="card" href="./training/azure/">
+          <div class="card__title">Azure training</div>
+          <div class="card__meta">AZ-900 • AZ-104 • AZ-305 • Security & Governance</div>
+        </a>
+
+        <a class="card" href="./training/microsoft365/">
+          <div class="card__title">Microsoft 365 training</div>
+          <div class="card__meta">MS-900 • MS-102 • Teams • Exchange • Identity</div>
+        </a>
+
+        <a class="card" href="./training/power-platform/">
+          <div class="card__title">Power Platform training</div>
+          <div class="card__meta">PL-900 • PL-300 • Power Apps • Power Automate</div>
+        </a>
+
+        <a class="card" href="./training/copilot/">
+          <div class="card__title">Microsoft Copilot training</div>
+          <div class="card__meta">Adoption • Prompting • Security • Governance</div>
+        </a>
+
+        <a class="card" href="./training/dynamics365/">
+          <div class="card__title">Dynamics 365 training</div>
+          <div class="card__meta">Business Central • Sales • Customer Service</div>
+        </a>
+
+        <a class="card" href="./training/labs/">
+          <div class="card__title">Labs</div>
+          <div class="card__meta">Hands-on practicals • guided exercises • outcomes</div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>
