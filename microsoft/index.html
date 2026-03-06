@@ -36,6 +36,59 @@
     </p>
   </section>
 
+  <!-- Category navigation for Microsoft training subpages -->
+  <section id="categories">
+    <h2>Training Categories</h2>
+    <div class="category-grid">
+      <!-- Replace individual cards with anchor cards so the whole card is clickable. -->
+      <!-- All training (links to the course catalog below) -->
+      <a href="#courses" class="category-card">
+        <h3>All Training</h3>
+        <p>Explore all Microsoft training and courses in one place.</p>
+      </a>
+      <!-- Azure training -->
+      <a href="azure.html" class="category-card">
+        <h3>Azure</h3>
+        <p>Learn cloud concepts and core Azure services.</p>
+      </a>
+      <!-- Dynamics 365 training -->
+      <a href="dynamics.html" class="category-card">
+        <h3>Dynamics 365</h3>
+        <p>Understand business applications and prepare for role‑based certifications.</p>
+      </a>
+      <!-- Copilot training -->
+      <a href="copilot.html" class="category-card">
+        <h3>Copilot</h3>
+        <p>Harness AI assistance across Microsoft 365.</p>
+      </a>
+      <!-- Microsoft 365 training -->
+      <a href="m365.html" class="category-card">
+        <h3>Microsoft 365</h3>
+        <p>Develop productivity and collaboration expertise.</p>
+      </a>
+      <!-- Power Platform training -->
+      <a href="power-platform.html" class="category-card">
+        <h3>Power Platform</h3>
+        <p>Unlock innovation with low‑code tools.</p>
+      </a>
+      <!-- Labs -->
+      <a href="labs.html" class="category-card">
+        <h3>Labs</h3>
+        <p>Hands‑on experiences that bridge theory and practice.</p>
+      </a>
+      <!-- Credentials -->
+      <a href="credentials.html" class="category-card">
+        <h3>Credentials</h3>
+        <p>Validate your skills with role‑based certifications.</p>
+      </a>
+      <!-- Career paths -->
+      <a href="career-paths.html" class="category-card">
+        <h3>Career Paths</h3>
+        <p>Chart your journey from fundamentals to expert.</p>
+      </a>
+    </div>
+  </section>
+
   <section id="courses">
     <h2>Our Courses</h2>
     <div class="cards" id="courseGrid">
@@ -140,7 +193,7 @@
           cost: '$99 (Exam Fee)',
           start: '19 Nov 2024',
           prerequisites: 'None',
-          link: 'https://learn.microsoft.com/',
+          link: 'm365.html',
         },
       },
       {
@@ -166,7 +219,7 @@
           cost: '$165 (Exam Fee)',
           start: '19 Nov 2024',
           prerequisites: 'Experience with Teams administration & understanding of Microsoft 365 services',
-          link: 'https://learn.microsoft.com/',
+          link: 'm365.html',
         },
       },
       {
@@ -193,7 +246,185 @@
           cost: '$165 (Exam Fee)',
           start: '19 Nov 2024',
           prerequisites: 'Microsoft 365 Certified: Modern Desktop Administrator Associate or equivalent',
-          link: 'https://learn.microsoft.com/',
+          link: 'm365.html',
+        },
+      },
+
+      /*
+       * Additional courses from the Microsoft training catalog. These entries
+       * extend the catalogue beyond Microsoft 365, covering Azure, Power
+       * Platform, Dynamics 365, Copilot, labs, credentials and career paths.
+       * Each object follows the same structure as the existing entries.
+       */
+      {
+        level: 'Beginner',
+        title: 'Microsoft Certified: Azure Fundamentals (AZ‑900)',
+        description:
+          'Gain foundational knowledge of cloud concepts, core Azure services and Azure management and governance. Ideal for anyone starting their cloud journey.',
+        topics: [
+          'Describe cloud concepts',
+          'Describe Azure architecture and services',
+          'Describe Azure management and governance',
+        ],
+        skills: [
+          'Understand cloud computing and deployment models',
+          'Identify core Azure services such as compute, networking and storage',
+          'Explain Azure management, governance and compliance tools',
+          'Articulate security, privacy, compliance and trust principles',
+        ],
+        details: {
+          mode: 'Self‑Paced',
+          cost: '$99 (Exam Fee)',
+          start: '19 Nov 2024',
+          prerequisites: 'None',
+          link: 'azure.html',
+        },
+      },
+      {
+        level: 'Beginner',
+        title: 'Microsoft Certified: Power Platform Fundamentals',
+        description:
+          'Understand the business value and capabilities of Microsoft Power Platform. Learn to build tailored solutions, connect data and automate processes with low‑code tools.',
+        topics: [
+          'Build basic apps with Power Apps',
+          'Connect data using Microsoft Dataverse and connectors',
+          'Automate business processes with Power Automate',
+          'Create self‑service experiences with Power Pages',
+          'Boost productivity using Copilot‑powered features',
+        ],
+        skills: [
+          'Develop low‑code solutions using Power Apps',
+          'Integrate data through Dataverse and connectors',
+          'Automate workflows with Power Automate',
+          'Design customer self‑service portals with Power Pages',
+          'Leverage AI copilots to enhance productivity',
+        ],
+        details: {
+          mode: 'Self‑Paced',
+          cost: '$99 (Exam Fee)',
+          start: '19 Nov 2024',
+          prerequisites: 'None',
+          link: 'power-platform.html',
+        },
+      },
+      {
+        level: 'Beginner',
+        title: 'Introduction to Microsoft 365 Copilot',
+        description:
+          'Explore how Microsoft 365 Copilot combines large language models with your data and apps to unlock new levels of productivity. This module covers functionality and responsible AI principles.',
+        topics: [
+          'Purpose and functionality of Microsoft 365 Copilot',
+          'Working principles behind the Copilot experience',
+          'Core components powering Copilot',
+          'Microsoft’s commitment to responsible AI practices',
+        ],
+        skills: [
+          'Integrate Copilot into your productivity workflows',
+          'Understand responsible AI principles',
+          'Identify the components of Copilot',
+          'Explain how Microsoft 365 Copilot works',
+        ],
+        details: {
+          mode: 'Guided Module',
+          cost: 'Free',
+          start: 'Available Now',
+          prerequisites: 'None',
+          link: 'copilot.html',
+        },
+      },
+      {
+        level: 'Intermediate',
+        title: 'Dynamics 365 Training & Certification',
+        description:
+          'Explore the capabilities of Dynamics 365 across finance, supply chain, sales and customer service while preparing for role‑based certifications aligned to your job role.',
+        topics: [
+          'Understand Dynamics 365 application capabilities',
+          'Explore product features and best practices',
+          'Prepare for role‑based certifications',
+        ],
+        skills: [
+          'Gain insight into Dynamics 365 modules',
+          'Prepare for functional consultant and developer roles',
+          'Implement best practices across finance, supply chain, sales and service',
+        ],
+        details: {
+          mode: 'Self‑Paced & Instructor‑Led',
+          cost: 'Varies',
+          start: 'On Demand',
+          prerequisites: 'None',
+          link: 'dynamics.html',
+        },
+      },
+      {
+        level: 'Beginner',
+        title: 'Hands‑On Technical Labs',
+        description:
+          'Apply your knowledge in guided labs that mirror real‑world scenarios. These experiences help bridge theory and practice and build job‑ready skills.',
+        topics: [
+          'Apply learned concepts in a controlled environment',
+          'Experiment with modern tools and best practices',
+          'Gain confidence through hands‑on experience',
+          'Develop practical skills for certifications',
+        ],
+        skills: [
+          'Apply theoretical knowledge in practice',
+          'Use modern tools in real‑world scenarios',
+          'Build job‑ready capabilities through step‑by‑step labs',
+        ],
+        details: {
+          mode: 'Guided Labs',
+          cost: 'Free',
+          start: 'Anytime',
+          prerequisites: 'None',
+          link: 'labs.html',
+        },
+      },
+      {
+        level: 'Beginner',
+        title: 'Microsoft Credentials: Role‑Based Certifications & Applied Skills',
+        description:
+          'Showcase real‑world expertise through role‑based certifications and scenario‑based applied skills across AI, cloud, security and business roles.',
+        topics: [
+          'Validate skills across AI, cloud, security and business roles',
+          'Progress through Fundamentals, Associate and Expert levels',
+          'Share achievements on social platforms',
+          'Renew certifications annually at no cost',
+        ],
+        skills: [
+          'Validate real‑world expertise aligned to job roles',
+          'Progress across certification levels',
+          'Renew credentials and share achievements',
+        ],
+        details: {
+          mode: 'Exams & Lab‑Based Assessments',
+          cost: 'Varies',
+          start: 'Flexible',
+          prerequisites: 'Varies by certification',
+          link: 'credentials.html',
+        },
+      },
+      {
+        level: 'Beginner',
+        title: 'Microsoft Certification Career Paths',
+        description:
+          'Discover structured certification paths that guide you from fundamental knowledge to expert proficiency across cloud, AI and business applications.',
+        topics: [
+          'Develop expertise across cloud, AI and business applications',
+          'Align certifications to job roles such as administrator, developer, architect or engineer',
+          'Progress from fundamentals to advanced levels',
+          'Stay current with industry standards and best practices',
+        ],
+        skills: [
+          'Chart a professional journey with Microsoft certifications',
+          'Select appropriate certification paths for career goals',
+          'Enhance employability and salary prospects',
+        ],
+        details: {
+          mode: 'Self‑Paced & Guided',
+          cost: 'Varies',
+          start: 'Anytime',
+          prerequisites: 'None',
+          link: 'career-paths.html',
         },
       },
     ];
