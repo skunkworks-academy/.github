@@ -1,525 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skunkworks Academy • Microsoft Training Catalog</title>
-  <!-- Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-  <!-- Main styles for this page -->
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>Microsoft Course Catalog – Skunkworks Academy</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <img src="images/logo.png" alt="Microsoft logo" class="brand__logo" />
-      <div class="brand__text">
-        <h1 class="brand__title">Skunkworks Academy</h1>
-        <span class="brand__subtitle">Microsoft Training Catalog</span>
-      </div>
-    </div>
-    <div class="topbar__actions">
-      <input id="search" class="search" type="search" placeholder="Search courses…" aria-label="Search courses" />
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-      </button>
-    </div>
-  </header>
-
-  <section class="hero">
-    <h1>Microsoft: Empowering the World Through Innovation</h1>
-    <p>
-      Microsoft is a global technology leader, offering a vast ecosystem of products and services, including
-      Windows, Office 365, Azure cloud services and advanced AI tools. With a mission to empower every individual
-      and organization to achieve more, Microsoft drives innovation across productivity, business applications and
-      digital transformation.
-    </p>
-  </section>
-
-  <!-- Category navigation for Microsoft training subpages -->
-  <section id="categories">
-    <h2>Training Categories</h2>
-    <div class="category-grid">
-      <!-- Replace individual cards with anchor cards so the whole card is clickable. -->
-      <!-- All training (links to the course catalog below) -->
-      <a href="#courses" class="category-card">
-        <h3>All Training</h3>
-        <p>Explore all Microsoft training and courses in one place.</p>
-      </a>
-      <!-- Azure training -->
-      <a href="azure.html" class="category-card">
-        <h3>Azure</h3>
-        <p>Learn cloud concepts and core Azure services.</p>
-      </a>
-      <!-- Dynamics 365 training -->
-      <a href="dynamics.html" class="category-card">
-        <h3>Dynamics 365</h3>
-        <p>Understand business applications and prepare for role‑based certifications.</p>
-      </a>
-      <!-- Copilot training -->
-      <a href="copilot.html" class="category-card">
-        <h3>Copilot</h3>
-        <p>Harness AI assistance across Microsoft 365.</p>
-      </a>
-      <!-- Microsoft 365 training -->
-      <a href="m365.html" class="category-card">
-        <h3>Microsoft 365</h3>
-        <p>Develop productivity and collaboration expertise.</p>
-      </a>
-      <!-- Power Platform training -->
-      <a href="power-platform.html" class="category-card">
-        <h3>Power Platform</h3>
-        <p>Unlock innovation with low‑code tools.</p>
-      </a>
-      <!-- Labs -->
-      <a href="labs.html" class="category-card">
-        <h3>Labs</h3>
-        <p>Hands‑on experiences that bridge theory and practice.</p>
-      </a>
-      <!-- Credentials -->
-      <a href="credentials.html" class="category-card">
-        <h3>Credentials</h3>
-        <p>Validate your skills with role‑based certifications.</p>
-      </a>
-      <!-- Career paths -->
-      <a href="career-paths.html" class="category-card">
-        <h3>Career Paths</h3>
-        <p>Chart your journey from fundamentals to expert.</p>
-      </a>
-    </div>
-  </section>
-
-  <section id="courses">
-    <h2>Our Courses</h2>
-    <div class="cards" id="courseGrid">
-      <!-- Course cards are inserted by JavaScript -->
-    </div>
-  </section>
-
-  <section id="stats">
-    <h2>Why Train with Us?</h2>
-    <div class="stats">
-      <div class="stat">
-        <div class="number">8000+</div>
-        <div class="label">Certified Microsoft Professionals</div>
-      </div>
-      <div class="stat">
-        <div class="number">92%</div>
-        <div class="label">Pass Rate</div>
-      </div>
-      <div class="stat">
-        <div class="number">15+</div>
-        <div class="label">Certification Tracks</div>
-      </div>
-      <div class="stat">
-        <div class="number">100%</div>
-        <div class="label">Global Coverage</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="partnership">
-    <h2>Skunkworks &amp; Microsoft</h2>
-    <div class="partnership">
-      <i class="fa-solid fa-handshake"></i>
-      <p>
-        Skunkworks has partnered with Microsoft to deliver immersive training programs for Microsoft certification
-        exams, such as Azure Fundamentals, Microsoft 365 Certified and Dynamics 365 certifications. This
-        collaboration combines Skunkworks' expertise in hands‑on learning with Microsoft’s cutting‑edge technology
-        stack, enabling professionals to build proficiency in cloud computing, productivity tools and AI‑driven
-        solutions. These programs are tailored to equip learners with the skills and certifications needed to
-        succeed in today’s competitive IT environment.
-      </p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>About Us</h3>
-        <p>Empowering professionals through cutting‑edge technology education since 2024.</p>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/company/skunkworksacademy/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        </div>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <div class="footer-links">
-          <a href="https://www.skunkworks.africa/about.html"><i class="fas fa-info-circle"></i>About</a>
-          <a href="https://www.skunkworks.africa/contact.html"><i class="fas fa-envelope"></i>Contact</a>
-          <a href="https://www.skunkworks.africa/careers.html"><i class="fas fa-briefcase"></i>Careers</a>
-        </div>
-      </div>
-      <div class="footer-section">
-        <h3>Legal</h3>
-        <div class="footer-links">
-          <a href="https://www.skunkworks.africa/terms.html"><i class="fas fa-file-contract"></i>Terms &amp; Conditions</a>
-          <a href="https://www.skunkworks.africa/privacy.html"><i class="fas fa-shield-alt"></i>Privacy Policy</a>
-          <a href="https://www.skunkworks.africa/cookie-policy.html"><i class="fas fa-cookie"></i>Cookie Policy</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Course data. Each object represents a Microsoft certification course. Data
-    // is derived from the Skunkworks Microsoft page【99907439387474†L41-L66】【99907439387474†L73-L99】【99907439387474†L103-L131】. Feel free to add more courses
-    // here as the catalog grows. The search functionality below will
-    // automatically incorporate any new entries.
-    const courses = [
-      {
-        level: 'Beginner',
-        title: 'Microsoft 365 Certified: Fundamentals',
-        description:
-          'Designed for individuals new to Microsoft 365, this certification provides foundational knowledge of cloud concepts, core services and benefits',
-        topics: [
-          'Introduction to cloud concepts',
-          'Microsoft 365 core services & features',
-          'Security & compliance in Microsoft 365',
-          'Pricing and support options',
-          'Benefits of adopting Microsoft 365 solutions',
-        ],
-        skills: [
-          'Understand Microsoft 365 services and solutions',
-          'Explain cloud computing concepts',
-          'Identify security and compliance features',
-          'Navigate pricing models',
-          'Assist in adoption strategies',
-        ],
-        details: {
-          mode: 'Self‑Paced',
-          cost: '$99 (Exam Fee)',
-          start: '19 Nov 2024',
-          prerequisites: 'None',
-          link: 'm365.html',
-        },
-      },
-      {
-        level: 'Intermediate',
-        title: 'Microsoft 365 Certified: Collaboration Communications Systems Engineer Associate',
-        description:
-          'For professionals who deploy, configure and manage collaboration solutions within Microsoft Teams',
-        topics: [
-          'Teams architecture & deployment',
-          'Managing voice, chat & collaboration tools',
-          'Direct routing & PSTN connectivity',
-          'Monitoring & troubleshooting Teams communication',
-        ],
-        skills: [
-          'Configure Teams for collaboration',
-          'Implement voice features',
-          'Troubleshoot connectivity issues',
-          'Deploy in hybrid & cloud environments',
-          'Ensure security & compliance',
-        ],
-        details: {
-          mode: 'Self‑Paced',
-          cost: '$165 (Exam Fee)',
-          start: '19 Nov 2024',
-          prerequisites: 'Experience with Teams administration & understanding of Microsoft 365 services',
-          link: 'm365.html',
-        },
-      },
-      {
-        level: 'Advanced',
-        title: 'Microsoft 365 Certified: Administrator Expert',
-        description:
-          'For IT professionals with expertise in evaluating, planning, migrating, deploying and managing Microsoft 365 services',
-        topics: [
-          'Tenant & service management',
-          'Modern workplace security & compliance',
-          'Hybrid identity management',
-          'Collaboration & communication management',
-          'Teams & Exchange Online administration',
-        ],
-        skills: [
-          'Configure & manage Microsoft 365 tenants',
-          'Implement advanced security & compliance',
-          'Administer Teams & collaboration tools',
-          'Manage identity & access in hybrid environments',
-          'Troubleshoot Microsoft 365 services',
-        ],
-        details: {
-          mode: 'Self‑Paced',
-          cost: '$165 (Exam Fee)',
-          start: '19 Nov 2024',
-          prerequisites: 'Microsoft 365 Certified: Modern Desktop Administrator Associate or equivalent',
-          link: 'm365.html',
-        },
-      },
-
-      /*
-       * Additional courses from the Microsoft training catalog. These entries
-       * extend the catalogue beyond Microsoft 365, covering Azure, Power
-       * Platform, Dynamics 365, Copilot, labs, credentials and career paths.
-       * Each object follows the same structure as the existing entries.
-       */
-      {
-        level: 'Beginner',
-        title: 'Microsoft Certified: Azure Fundamentals (AZ‑900)',
-        description:
-          'Gain foundational knowledge of cloud concepts, core Azure services and Azure management and governance. Ideal for anyone starting their cloud journey.',
-        topics: [
-          'Describe cloud concepts',
-          'Describe Azure architecture and services',
-          'Describe Azure management and governance',
-        ],
-        skills: [
-          'Understand cloud computing and deployment models',
-          'Identify core Azure services such as compute, networking and storage',
-          'Explain Azure management, governance and compliance tools',
-          'Articulate security, privacy, compliance and trust principles',
-        ],
-        details: {
-          mode: 'Self‑Paced',
-          cost: '$99 (Exam Fee)',
-          start: '19 Nov 2024',
-          prerequisites: 'None',
-          link: 'azure.html',
-        },
-      },
-      {
-        level: 'Beginner',
-        title: 'Microsoft Certified: Power Platform Fundamentals',
-        description:
-          'Understand the business value and capabilities of Microsoft Power Platform. Learn to build tailored solutions, connect data and automate processes with low‑code tools.',
-        topics: [
-          'Build basic apps with Power Apps',
-          'Connect data using Microsoft Dataverse and connectors',
-          'Automate business processes with Power Automate',
-          'Create self‑service experiences with Power Pages',
-          'Boost productivity using Copilot‑powered features',
-        ],
-        skills: [
-          'Develop low‑code solutions using Power Apps',
-          'Integrate data through Dataverse and connectors',
-          'Automate workflows with Power Automate',
-          'Design customer self‑service portals with Power Pages',
-          'Leverage AI copilots to enhance productivity',
-        ],
-        details: {
-          mode: 'Self‑Paced',
-          cost: '$99 (Exam Fee)',
-          start: '19 Nov 2024',
-          prerequisites: 'None',
-          link: 'power-platform.html',
-        },
-      },
-      {
-        level: 'Beginner',
-        title: 'Introduction to Microsoft 365 Copilot',
-        description:
-          'Explore how Microsoft 365 Copilot combines large language models with your data and apps to unlock new levels of productivity. This module covers functionality and responsible AI principles.',
-        topics: [
-          'Purpose and functionality of Microsoft 365 Copilot',
-          'Working principles behind the Copilot experience',
-          'Core components powering Copilot',
-          'Microsoft’s commitment to responsible AI practices',
-        ],
-        skills: [
-          'Integrate Copilot into your productivity workflows',
-          'Understand responsible AI principles',
-          'Identify the components of Copilot',
-          'Explain how Microsoft 365 Copilot works',
-        ],
-        details: {
-          mode: 'Guided Module',
-          cost: 'Free',
-          start: 'Available Now',
-          prerequisites: 'None',
-          link: 'copilot.html',
-        },
-      },
-      {
-        level: 'Intermediate',
-        title: 'Dynamics 365 Training & Certification',
-        description:
-          'Explore the capabilities of Dynamics 365 across finance, supply chain, sales and customer service while preparing for role‑based certifications aligned to your job role.',
-        topics: [
-          'Understand Dynamics 365 application capabilities',
-          'Explore product features and best practices',
-          'Prepare for role‑based certifications',
-        ],
-        skills: [
-          'Gain insight into Dynamics 365 modules',
-          'Prepare for functional consultant and developer roles',
-          'Implement best practices across finance, supply chain, sales and service',
-        ],
-        details: {
-          mode: 'Self‑Paced & Instructor‑Led',
-          cost: 'Varies',
-          start: 'On Demand',
-          prerequisites: 'None',
-          link: 'dynamics.html',
-        },
-      },
-      {
-        level: 'Beginner',
-        title: 'Hands‑On Technical Labs',
-        description:
-          'Apply your knowledge in guided labs that mirror real‑world scenarios. These experiences help bridge theory and practice and build job‑ready skills.',
-        topics: [
-          'Apply learned concepts in a controlled environment',
-          'Experiment with modern tools and best practices',
-          'Gain confidence through hands‑on experience',
-          'Develop practical skills for certifications',
-        ],
-        skills: [
-          'Apply theoretical knowledge in practice',
-          'Use modern tools in real‑world scenarios',
-          'Build job‑ready capabilities through step‑by‑step labs',
-        ],
-        details: {
-          mode: 'Guided Labs',
-          cost: 'Free',
-          start: 'Anytime',
-          prerequisites: 'None',
-          link: 'labs.html',
-        },
-      },
-      {
-        level: 'Beginner',
-        title: 'Microsoft Credentials: Role‑Based Certifications & Applied Skills',
-        description:
-          'Showcase real‑world expertise through role‑based certifications and scenario‑based applied skills across AI, cloud, security and business roles.',
-        topics: [
-          'Validate skills across AI, cloud, security and business roles',
-          'Progress through Fundamentals, Associate and Expert levels',
-          'Share achievements on social platforms',
-          'Renew certifications annually at no cost',
-        ],
-        skills: [
-          'Validate real‑world expertise aligned to job roles',
-          'Progress across certification levels',
-          'Renew credentials and share achievements',
-        ],
-        details: {
-          mode: 'Exams & Lab‑Based Assessments',
-          cost: 'Varies',
-          start: 'Flexible',
-          prerequisites: 'Varies by certification',
-          link: 'credentials.html',
-        },
-      },
-      {
-        level: 'Beginner',
-        title: 'Microsoft Certification Career Paths',
-        description:
-          'Discover structured certification paths that guide you from fundamental knowledge to expert proficiency across cloud, AI and business applications.',
-        topics: [
-          'Develop expertise across cloud, AI and business applications',
-          'Align certifications to job roles such as administrator, developer, architect or engineer',
-          'Progress from fundamentals to advanced levels',
-          'Stay current with industry standards and best practices',
-        ],
-        skills: [
-          'Chart a professional journey with Microsoft certifications',
-          'Select appropriate certification paths for career goals',
-          'Enhance employability and salary prospects',
-        ],
-        details: {
-          mode: 'Self‑Paced & Guided',
-          cost: 'Varies',
-          start: 'Anytime',
-          prerequisites: 'None',
-          link: 'career-paths.html',
-        },
-      },
-    ];
-
-    // DOM elements
-    const elements = {
-      courseGrid: document.getElementById('courseGrid'),
-      searchBar: document.getElementById('search'),
-      themeToggle: document.getElementById('themeToggle'),
-      body: document.body,
-    };
-
-    // Render course cards based on a list of courses
-    function renderCourses(list) {
-      const html = list
-        .map(course => {
-          return `
-            <div class="card">
-              <div>
-                <span class="level ${course.level.toLowerCase()}">${course.level}</span>
-                <h3><i class="fas fa-${
-                  course.level === 'Beginner'
-                    ? 'seedling'
-                    : course.level === 'Intermediate'
-                    ? 'chess-knight'
-                    : 'graduation-cap'
-                }"></i>${course.title}</h3>
-                <p>${course.description}</p>
-                <strong>Key topics</strong>
-                <ul>
-                  ${course.topics.map(t => `<li>${t}</li>`).join('')}
-                </ul>
-                <strong>Skills gained</strong>
-                <ul>
-                  ${course.skills.map(s => `<li>${s}</li>`).join('')}
-                </ul>
-                <div class="details">
-                  <p><strong>Mode:</strong> ${course.details.mode}</p>
-                  <p><strong>Cost:</strong> ${course.details.cost}</p>
-                  <p><strong>Start date:</strong> ${course.details.start}</p>
-                  <p><strong>Prerequisites:</strong> ${course.details.prerequisites}</p>
-                </div>
-              </div>
-              <div class="cta">
-                <a href="${course.details.link}" target="_blank" rel="noopener">Learn more</a>
-              </div>
+    <div class="topbar">
+        <div class="brand">
+            <img class="brand__logo" src="../placeholder_light_gray_block.png" alt="Logo">
+            <div>
+                <div class="brand__title">Skunkworks Academy</div>
+                <div class="brand__subtitle">Microsoft Training</div>
             </div>
-          `;
-        })
-        .join('');
-      elements.courseGrid.innerHTML = html;
-    }
-
-    // Filter courses based on search input
-    function handleSearch(event) {
-      const term = event.target.value.toLowerCase().trim();
-      const filtered = courses.filter(c => {
-        return (
-          c.title.toLowerCase().includes(term) ||
-          c.description.toLowerCase().includes(term) ||
-          c.topics.some(t => t.toLowerCase().includes(term)) ||
-          c.skills.some(s => s.toLowerCase().includes(term))
-        );
-      });
-      renderCourses(filtered);
-    }
-
-    // Theme toggle
-    function toggleTheme() {
-      const current = elements.body.getAttribute('data-theme') || 'light';
-      const newTheme = current === 'dark' ? 'light' : 'dark';
-      elements.body.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      // update icon
-      const icon = elements.themeToggle.querySelector('i');
-      icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    }
-
-    // Initialize theme from localStorage
-    function initTheme() {
-      const saved = localStorage.getItem('theme');
-      if (saved) {
-        elements.body.setAttribute('data-theme', saved);
-        const icon = elements.themeToggle.querySelector('i');
-        icon.className = saved === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-      }
-    }
-
-    // Event listeners
-    document.addEventListener('DOMContentLoaded', () => {
-      renderCourses(courses);
-      initTheme();
-      elements.searchBar.addEventListener('input', handleSearch);
-      elements.themeToggle.addEventListener('click', toggleTheme);
-    });
-  </script>
+        </div>
+        <input id="search" class="search" type="text" placeholder="Search courses">
+    </div>
+    <div class="layout">
+        <aside class="sidebar">
+            <nav class="nav">
+                <a class="nav__item" href="data-platform.html">Data Platform</a>
+                <a class="nav__item" href="microsoft-365.html">Microsoft 365</a>
+                <a class="nav__item" href="microsoft-office-365.html">Microsoft Office 365</a>
+                <a class="nav__item" href="microsoft-windows-server.html">Microsoft Windows Server</a>
+                <a class="nav__item" href="power-bi.html">Power BI</a>
+                <a class="nav__item" href="power-platform.html">Power Platform</a>
+                <a class="nav__item" href="data-analytics.html">Data Analytics</a>
+                <a class="nav__item" href="microsoft-azure.html">Microsoft Azure</a>
+                <a class="nav__item" href="microsoft-dynamics.html">Microsoft Dynamics</a>
+                <a class="nav__item" href="ai-platform.html">AI Platform</a>
+                <a class="nav__item" href="japanese.html">Japanese</a>
+                <a class="nav__item" href="security.html">Security</a>
+                <a class="nav__item" href="microsoft-dynamics-365.html">Microsoft Dynamics 365</a>
+                <a class="nav__item" href="microsoft-dynamics-365-business-edition.html">Dynamics 365 Business Edition</a>
+                <a class="nav__item" href="microsoft-endpoint-configuration-manager.html">Endpoint Configuration Manager</a>
+                <a class="nav__item" href="microsoft-office.html">Microsoft Office</a>
+                <a class="nav__item" href="microsoft-products.html">Microsoft Products</a>
+                <a class="nav__item" href="microsoft-sharepoint.html">Microsoft SharePoint</a>
+                <a class="nav__item" href="microsoft-skype-for-business.html">Skype for Business</a>
+                <a class="nav__item" href="microsoft-sql-server.html">SQL Server</a>
+                <a class="nav__item" href="microsoft-system-center.html">System Center</a>
+                <a class="nav__item" href="microsoft-visual-studio.html">Visual Studio</a>
+                <a class="nav__item" href="non-microsoft-products-and-technologies.html">Non-Microsoft Products</a>
+                <a class="nav__item" href="teams.html">Teams</a>
+                <a class="nav__item" href="waypoint.html">Waypoint</a>
+                <a class="nav__item" href="web-development.html">Web Development</a>
+                <a class="nav__item" href="windows.html">Windows</a>
+                <a class="nav__item" href="windows-server-technologies.html">Windows Server Tech</a>
+            </nav>
+        </aside>
+        <div class="content">
+            <h1 class="h1">Microsoft Course Catalog</h1>
+            <p class="muted">Browse our Microsoft training categories and explore official courses, applied skills and community content.</p>
+            <div class="grid" id="cards">
+                <a class="card" href="data-platform.html">
+                    <div class="card__title">Data Platform</div>
+                    <div class="card__meta">Database management &amp; analytics</div>
+                </a>
+                <a class="card" href="microsoft-365.html">
+                    <div class="card__title">Microsoft 365</div>
+                    <div class="card__meta">Cloud productivity &amp; collaboration</div>
+                </a>
+                <a class="card" href="microsoft-office-365.html">
+                    <div class="card__title">Microsoft Office 365</div>
+                    <div class="card__meta">Office applications &amp; productivity</div>
+                </a>
+                <a class="card" href="microsoft-windows-server.html">
+                    <div class="card__title">Microsoft Windows Server</div>
+                    <div class="card__meta">Server administration &amp; infrastructure</div>
+                </a>
+                <a class="card" href="power-bi.html">
+                    <div class="card__title">Power BI</div>
+                    <div class="card__meta">Business intelligence &amp; reporting</div>
+                </a>
+                <a class="card" href="power-platform.html">
+                    <div class="card__title">Power Platform</div>
+                    <div class="card__meta">Low‑code apps &amp; automation</div>
+                </a>
+                <a class="card" href="data-analytics.html">
+                    <div class="card__title">Data Analytics</div>
+                    <div class="card__meta">Data analysis &amp; insights</div>
+                </a>
+                <a class="card" href="microsoft-azure.html">
+                    <div class="card__title">Microsoft Azure</div>
+                    <div class="card__meta">Cloud infrastructure &amp; services</div>
+                </a>
+                <a class="card" href="microsoft-dynamics.html">
+                    <div class="card__title">Microsoft Dynamics</div>
+                    <div class="card__meta">CRM &amp; ERP solutions</div>
+                </a>
+                <a class="card" href="ai-platform.html">
+                    <div class="card__title">AI Platform</div>
+                    <div class="card__meta">Artificial intelligence &amp; ML</div>
+                </a>
+                <a class="card" href="japanese.html">
+                    <div class="card__title">Japanese</div>
+                    <div class="card__meta">Courses in Japanese</div>
+                </a>
+                <a class="card" href="security.html">
+                    <div class="card__title">Security</div>
+                    <div class="card__meta">Cybersecurity &amp; compliance</div>
+                </a>
+                <a class="card" href="microsoft-dynamics-365.html">
+                    <div class="card__title">Microsoft Dynamics 365</div>
+                    <div class="card__meta">CRM &amp; ERP for businesses</div>
+                </a>
+                <a class="card" href="microsoft-dynamics-365-business-edition.html">
+                    <div class="card__title">Dynamics 365 Business Edition</div>
+                    <div class="card__meta">Business Edition modules</div>
+                </a>
+                <a class="card" href="microsoft-endpoint-configuration-manager.html">
+                    <div class="card__title">Endpoint Configuration Manager</div>
+                    <div class="card__meta">Device management &amp; deployment</div>
+                </a>
+                <a class="card" href="microsoft-office.html">
+                    <div class="card__title">Microsoft Office</div>
+                    <div class="card__meta">Office productivity tools</div>
+                </a>
+                <a class="card" href="microsoft-products.html">
+                    <div class="card__title">Microsoft Products</div>
+                    <div class="card__meta">Wide range of Microsoft technologies</div>
+                </a>
+                <a class="card" href="microsoft-sharepoint.html">
+                    <div class="card__title">Microsoft SharePoint</div>
+                    <div class="card__meta">Collaboration &amp; content management</div>
+                </a>
+                <a class="card" href="microsoft-skype-for-business.html">
+                    <div class="card__title">Skype for Business</div>
+                    <div class="card__meta">Unified communications &amp; voice</div>
+                </a>
+                <a class="card" href="microsoft-sql-server.html">
+                    <div class="card__title">SQL Server</div>
+                    <div class="card__meta">Relational database management</div>
+                </a>
+                <a class="card" href="microsoft-system-center.html">
+                    <div class="card__title">System Center</div>
+                    <div class="card__meta">Infrastructure management suite</div>
+                </a>
+                <a class="card" href="microsoft-visual-studio.html">
+                    <div class="card__title">Visual Studio</div>
+                    <div class="card__meta">Development &amp; debugging tools</div>
+                </a>
+                <a class="card" href="non-microsoft-products-and-technologies.html">
+                    <div class="card__title">Non‑Microsoft Products</div>
+                    <div class="card__meta">Courses on other technologies</div>
+                </a>
+                <a class="card" href="teams.html">
+                    <div class="card__title">Teams</div>
+                    <div class="card__meta">Collaboration &amp; messaging</div>
+                </a>
+                <a class="card" href="waypoint.html">
+                    <div class="card__title">Waypoint</div>
+                    <div class="card__meta">Learning pathways</div>
+                </a>
+                <a class="card" href="web-development.html">
+                    <div class="card__title">Web Development</div>
+                    <div class="card__meta">Web technologies &amp; frameworks</div>
+                </a>
+                <a class="card" href="windows.html">
+                    <div class="card__title">Windows</div>
+                    <div class="card__meta">Operating system fundamentals</div>
+                </a>
+                <a class="card" href="windows-server-technologies.html">
+                    <div class="card__title">Windows Server Tech</div>
+                    <div class="card__meta">Server operating systems &amp; technologies</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="../app.js"></script>
 </body>
 </html>
